@@ -11,8 +11,9 @@ console.log(generateBtn)
 function passwordLength() {
 passLength = prompt("How many characters would you like your password to be? Please enter between 8 and 120 characters");
 if (passLength < 8 || passLength > 120) {
-  prompt("Please enter a number between 8 and 120 characters!")
+  passwordLength()
 }
+return;
 }
 
 function criteria() {
@@ -31,35 +32,36 @@ function criteria() {
 
 console.log(bigArray); 
 
-
+function generatePassword() {
 var superPassword = ""
 for (i=0; i<passLength; i++){
-superPassword =+ bigArray[Math.floor(Math.random()*bigArray.length)];
+superPassword += bigArray[Math.floor(Math.random()*bigArray.length)];
 }
-
+return superPassword;
+}
 
 
 function writePassword() {
   passwordLength();
   criteria();
   //Array Concatenator! Adds each successive array to 'bigArray" depending on what the user selected
-  if (upperCase===true){
+  if (upperCase){
     bigArray = bigArray.concat(upperCaseOptions)
     console.log("upper" + bigArray);
   }
 
-  if (lowerCase===true){
+  if (lowerCase){
       bigArray = bigArray.concat(lowerCaseOptions)
       console.log("lower" + bigArray);
   }
 
-  if (numeric===true){
-    bigArray = bigArray.concat(bigArray, numericOptions)
+  if (numeric){
+    bigArray = bigArray.concat(numericOptions)
     console.log("numbers" + bigArray);
   }
 
-  if (special===true){
-    bigArray = bigArray.concat(bigArray, specialOptions)
+  if (special){
+    bigArray = bigArray.concat(specialOptions)
     console.log("special" + bigArray);
   }
 
