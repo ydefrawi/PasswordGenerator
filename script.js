@@ -32,10 +32,10 @@ function criteria() {
 console.log(bigArray); 
 
 
-// var superPassword = ""
-// for (i=0; i<passLength; i++){
-// superPassword =+ bigArray[Math.floor(Math.random()*bigArray.length)];
-// }
+var superPassword = ""
+for (i=0; i<passLength; i++){
+superPassword =+ bigArray[Math.floor(Math.random()*bigArray.length)];
+}
 
 
 
